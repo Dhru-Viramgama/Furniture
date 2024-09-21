@@ -13,6 +13,7 @@ const MobileDrawer = () => {
     return (
         <>
             <button className="lg:hidden text-black" onClick={handleClick}>
+                <label className="hidden">Menu Btn</label>
                 <MenuIcon className="text-neutral-soft-grey mr-5" />
             </button>
             <div className="lg:hidden">
