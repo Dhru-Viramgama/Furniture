@@ -1,0 +1,26 @@
+@import "./ThemeColors.scss";
+
+@font-face {
+    font-family: 'Syne';
+    src: url('Syne-Bold.woff2') format('woff2'),
+        url('Syne-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Regular.woff2') format('woff2'),
+        url('Inter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.primaryButton {
+    font-family: "Inter";
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+}

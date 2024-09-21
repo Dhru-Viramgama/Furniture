@@ -1,0 +1,86 @@
+---
+import RightIcon from '../../Icons/RightIcon'
+import SearchIcon from '../../Icons/SearchIcon'
+import FeaturedCard from './FeaturedCard.astro'
+import SofaImage from "../../Assets/SofaImage.png"
+import ChairImage from "../../Assets/ChairImage.png"
+import Button from '../Button/Button'
+import RightArrowIcon from '../../Icons/RightArrowIcon'
+---
+
+<div class="HeroContainer pt-[100px] min-h-[1348px] max-w-[1630px] mx-auto bg-center">
+    <div class='px-4 md:px-[20px] lg:px-[25px 2xl:px-[40px] md:container md:mx-auto'>
+        <div class='lg:flex lg:justify-between'>
+            <div class='mt-12 hidden lg:block'>
+                <p class='max-w-[284px] text-xl opacity-70 text-neutral-white font-inter'>
+                    Having a home you love means having furnishing that you’re proud of. We are proud to bring you trendy furniture for every room in the house, with the added bonus.
+                </p>
+                <Button className='primaryButton flex items-center gap-6 text-[#D2FFAF] mt-6' client:load>
+                    Read More
+                    <RightArrowIcon className='mt-1' />
+                </Button>
+                <div class="rounded-full border-2 border-neutral-white bg-neutral-soft-grey py-5 px-8 flex gap-3 w-fit">
+                    <div class="colorPaletteShadow relative h-9 w-9 rounded-full border-2 border-neutral-white bg-neutral-black ">
+                        <RightIcon className='text-neutral-white absolute m-auto top-0 bottom-0 right-0 left-0' />
+                    </div>
+                    <div class="colorPaletteShadow relative h-9 w-9 rounded-full border-2 border-neutral-white bg-neutral-black "/>
+                    <div class="colorPaletteShadow relative h-9 w-9 rounded-full border-2 border-neutral-white bg-neutral-black "/>
+                </div>
+            </div>
+            <div class='mt-16'>
+                <div class="max-w-[550px] max-lg:mx-auto">
+                    <div class='grid justify-center'>
+                        <div class='max-w-[395px] inline-flex items-center mx-auto justify-center gap-[14px] font-inter'>
+                            <SearchIcon className='text-neutral-white' />
+                            <input placeholder='Search' class='border-b border-neutral-white border-opacity-50 py-2 bg-transparent text-neutral-white text-opacity-70 text-xl placeholder:text-neutral-white placeholder:opacity-70' />
+                        </div>
+                    </div>
+                    <h1 class='text-neutral-white font-syne text-[64px] font-bold text-center'>Make a room comfortable & elegant</h1>
+                </div>
+            </div>
+            <div class='mt-12 lg:hidden'>
+                <p class='max-w-[284px] text-xl opacity-70 text-neutral-white font-inter mx-auto'>
+                    Having a home you love means having furnishing that you’re proud of. We are proud to bring you trendy furniture for every room in the house, with the added bonus.
+                </p>
+                <Button className='primaryButton flex items-center gap-6 text-[#D2FFAF] md:text-primary-green lg:text-[#D2FFAF] mt-6 mx-auto' client:load>
+                    Read More
+                    <RightArrowIcon className='mt-1' />
+                </Button>
+            </div>
+            <div class='mt-16'>
+                <h2 class='font-syne text-neutral-white text-center font-bold text-3xl'>
+                    Featured
+                </h2>
+                <div class="mt-12 w-fit max-lg:mx-auto">
+                    <FeaturedCard image={SofaImage} title="Black Sofa" price={"$250"} />
+                </div>
+                <div class="mt-[40px] w-fit max-lg:mx-auto">
+                    <FeaturedCard image={ChairImage} title="Black Chair" price={"$100"} />
+                </div>
+                <div class="mt-[40px] w-fit max-lg:mx-auto font-inter text-neutral-white font-semibold text-xl">
+                    <Button className='MoreProductBtn' client:load>
+                        More Product
+                    </Button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .HeroContainer {
+        background-image: url('../../Assets/HeroBannerBackgroundImage.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-clip: padding-box;
+    }
+    .MoreProductBtn {
+        padding: 24px 40px 24px 40px;
+        border-radius: 16px;
+        border: 2px solid;
+        background-color: #141414B2;
+        border-image-source: linear-gradient(145.54deg, #AEAEAE -1.62%, rgba(255, 255, 255, 0) 79.65%);
+    }
+    .colorPaletteShadow {
+        box-shadow: 3px 4px 12px 0px #00000036;
+    }
+</style>

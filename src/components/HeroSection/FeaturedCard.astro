@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  image: any;
+  title: string;
+  price: string;
+}
+
+const {image, title, price} = Astro.props;
+---
+
+<div class="relative mt-4 w-fit">
+    <div class="ImageContainer w-[149px] h-[144px] inline-flex">
+        <Image src={image} alt="featured_card" class={"m-auto"} />
+    </div>
+    <div class="container grid border-2 rounded-3xl border-neutral-white border-opacity-60">
+      <div class="mt-auto">
+        <h2 class="title text-neutral-white">
+          {title}
+        </h2>
+        <p class="price text-neutral-white mt-2">
+          {price}
+        </p>
+      </div>
+    </div>
+</div>
+
+<style>
+  .ImageContainer{
+    position: absolute;
+    width: 149px;
+    height: 144px;
+    top: -16px;
+    left: -22px;
+    border-radius: 16px;
+    background: #F1F1F1;
+  }
+  .container{
+    /* border-image-source: linear-gradient(188.4deg, #FFFFFF -9.75%, rgba(255, 255, 255, 0) 93.57%); */
+    background: linear-gradient(182.67deg, rgba(255, 255, 255, 0.7) -96.84%, rgba(255, 255, 255, 0) 130.25%, rgba(255, 255, 255, 0) 130.25%);
+    width: 222px;
+    height: 240px;
+    padding: 23px 26px ;
+  }
+  .title{
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24.2px;
+    text-align: left;
+  }
+  .price{
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: left;
+  }
+</style>

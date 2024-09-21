@@ -1,0 +1,14 @@
+@import '../../../styles/ThemeColors.scss';
+
+.NavMenuList {
+    color: $NeutralWhite;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    opacity: 50%;
+    font-family: "Inter";
+
+    &.active {
+        opacity: 100% !important;
+    }
+}

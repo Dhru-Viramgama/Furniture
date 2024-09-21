@@ -1,0 +1,23 @@
+---
+import Style from "./Navbar.module.scss"
+import MobileDrawer from "./MobileDrawer"
+import Logo from "../../Icons/Logo"
+
+---
+
+<nav class='fixed w-full bg-transparent backdrop-blur-md z-20 top-0'>
+    <div class='px-4 md:px-[20px] lg:px-[25px] 2xl:px-[40px] md:container md:mx-auto h-[100px]'>
+        <div class='flex lg:grid lg:grid-cols-12 items-center h-full'>
+            <MobileDrawer client:load/>
+            <Logo className='lg:col-span-4 text-neutral-soft-grey'/>
+            <div class='hidden lg:col-span-8 lg:block'>
+                <ul class='flex gap-10'>
+                    <li><a href="#" class={`${Style.NavMenuList} ${Style.active}`}>Home</a></li>
+                    <li><a href="#" class={`${Style.NavMenuList}`}>Furniture</a></li>
+                    <li><a href="#" class={`${Style.NavMenuList}`}>Accessories</a></li>
+                    <li><a href="#" class={`${Style.NavMenuList}`}>About us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
