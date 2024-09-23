@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets"
+
+const { user } = Astro.props
+const {
+    image,
+    firstName,
+    lastName,
+    email,
+    phone
+}=user;
+---
+
+<a href={`/users/${user.id}`} class="max-w-2xl w-full mx-4 sm:max-w-sm md:max-w-sm px-2 py-4 lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto bg-white shadow-xl rounded-lg text-gray-900">
+    <div class="mx-auto w-32 h-32 relative border-4 border-white overflow-hidden">
+        <Image class="object-cover object-center h-32" height={120} width={120} src={image} alt='Woman looking front'/>
+    </div>
+    <div class="text-center mt-2 max-w-full">
+        <h2 class="font-semibold">{firstName} {lastName}</h2>
+        <span class="text-gray-500 line-clamp-1">{email}</>
+        <span class="text-gray-500 line-clamp-1">{phone}</>
+    </div>
+</a>

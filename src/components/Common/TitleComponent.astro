@@ -1,0 +1,47 @@
+---
+import RightArrowIcon from '../../Icons/RightArrowIcon';
+
+interface Props {
+  mainContainerClass?: string;
+  headingClass?: string;
+  titleClass?: string;
+  descriptionClass?: string;
+  buttonClass?: string;
+  heading?: string;
+  title: string;
+  description: string;
+  buttonText?: string;
+  isButtonVisible?: boolean
+}
+
+const { 
+    mainContainerClass,
+    headingClass,
+    titleClass,
+    descriptionClass,
+    heading,
+    title,
+    description,
+    isButtonVisible = true,
+    buttonText="Read More",
+    buttonClass,
+  } = Astro.props;
+---
+
+<div class={`max-w-[577px] ${mainContainerClass}`}>
+    {heading &&
+        <p class={`font-inter font-semibold text-sm md:text-base lg:text-lg 2xl:text-xl mb-6 md:mb-8 2xl:mb-10 ${headingClass}`}>{heading}</p>
+    }
+    {title &&
+        <h2 class={`text-neutral-black font-syne text-[11.25vw] md:text-[64px] mb-3 md:mb-4 lg:mb-5 2xl:mb-6 font-bold ${titleClass}`}>{title}</h2>
+    }
+    {description &&
+        <p class={`text-neutral-black font-inter text-sm md:text-base lg:text-lg 2xl:text-xl opacity-70 mb-6 md:mb-8 2xl:mb-10 ${descriptionClass}`}>{description}</p>
+    }
+    {isButtonVisible &&
+        <a class={`font-inter text-base md:text-lg lg:text-xl 2xl:text-2xl flex items-center gap-3 md:gap-4 lg:gap-6 ${buttonClass}`}>
+            {buttonText}
+            <RightArrowIcon/>
+        </a>
+    }
+</div>

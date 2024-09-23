@@ -8,6 +8,8 @@ export default {
 				"neutral-white": "#FFFFFF",
 				"neutral-black": "#242424",
 				"primary-green": "#556652",
+				"primary-orange": "#F68129",
+				"aquamarine": "#6CD6C3",
 			},
 		},
 		fontFamily: {

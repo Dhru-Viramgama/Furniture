@@ -1,0 +1,50 @@
+---
+const { id } = Astro.params;
+
+let user:any = null;
+
+try {
+    const res = await fetch(`https://dummyjson.com/users/${id}`);
+    if (!res.ok) {
+        console.error('Network response was not ok');
+    }
+    const userData = await res.json();  
+    console.log('userData: ', userData);
+    user = userData;
+} catch (error) {
+    console.error('Error fetching user:', error);
+}
+---
+
+{!user?.message ? (
+    <>
+        <ul>
+            <li>
+               FullName: <span>{user?.firstName} {user?.lastName}</span>
+            </li>
+            <li>
+               Email: <span>{user?.email}</span>
+            </li>
+            <li>
+               Phone: <span>{user?.phone}</span>
+            </li>
+            <li>
+               Address: <span>{user?.address?.address}, {user?.address?.city}, {user?.address?.state}, {user?.address?.postalCode}, {user?.address?.country}.</span>
+            </li>
+            <li>
+               BirthDate: <span>{user?.birthDate}</span>
+            </li>
+            <li>
+                Height: <span>{user?.height}</span>
+            </li>
+            <li>
+                Weight: <span>{user?.weight}</span>
+            </li>
+            <li>
+                Role: <span>{user?.role}</span>
+            </li>
+        </ul>
+    </>
+) : (
+    <p>{user?.message}</p>
+)}
