@@ -1,4 +1,6 @@
 ---
+import Layout from "../../../layouts/Layout.astro";
+
 const { id } = Astro.params;
 
 let user:any = null;
@@ -15,7 +17,9 @@ try {
 }
 ---
 
-{!user?.message ? (
+<Layout title={`${user?.firstName} ${user?.lastName}`}>
+<div class="px-4 md:px-[20px] lg:px-[25px] 2xl:px-[40px] md:container md:mx-auto">
+{!user?.message &&
     <>
         <ul>
             <li>
@@ -43,7 +47,10 @@ try {
                 Role: <span>{user?.role}</span>
             </li>
         </ul>
-    </>
-) : (
+    </d>
+}
+{user?.message &&
     <p>{user?.message}</p>
-)}
+}
+</div>
+</Layout>

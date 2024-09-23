@@ -1,5 +1,6 @@
 ---
 import UserCard from "../../components/Users/UserCard.astro";
+import Layout from "../../layouts/Layout.astro";
 
 let users:any = null;
 
@@ -15,12 +16,14 @@ try {
 }
 ---
 
-<div class="px-4 md:px-[20px] lg:px-[25px] 2xl:px-[40px] md:container md:mx-auto">
-    {!users?.message && (
-        <div class="grid max-sm:grid-cols-1 max-md:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-              {users?.users?.map((user:any)=>(
-                <UserCard key={user.id} user={user}/>
-              ))}
-        </div>
-    )}
-</div>
+<Layout title="Users">
+    <div class="px-4 md:px-[20px] lg:px-[25px] 2xl:px-[40px] md:container md:mx-auto">
+        {!users?.message && (
+            <div class="grid max-sm:grid-cols-1 max-md:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+                  {users?.users?.map((user:any)=>(
+                    <UserCard key={user.id} user={user}/>
+                  ))}
+            </div>
+        )}
+    </div>
+</Layout>
